@@ -1,15 +1,14 @@
-# -*- coding: utf-8 -*-
-# <nbformat>3.0</nbformat>
 
-# <codecell>
+# coding: utf-8
+
+# In[1]:
 
 import csv
 
-# <headingcell level=3>
 
-# Dataset Input
+# ### Dataset Input
 
-# <codecell>
+# In[2]:
 
 ## Train Dataset.
 images = [] # Images as vectors
@@ -23,7 +22,8 @@ with open('train.csv', 'rb') as trainfile:
         digits.append(row[0])
         images.append(row[1:])
 
-# <codecell>
+
+# In[3]:
 
 ## Test Dataset
 test_images = []
@@ -35,11 +35,10 @@ with open('test.csv', 'rb') as testfile:
     for row in testread:
         test_images.append(row)
 
-# <markdowncell>
 
 # ### KNN Classifier
 
-# <codecell>
+# In[4]:
 
 ## KNN Classifier
 # Training
@@ -48,19 +47,37 @@ k = 1
 knn = neighbors.KNeighborsClassifier(n_neighbors=k)
 knn.fit(images, digits)
 
-# <codecell>
+
+# In[5]:
 
 # Prediction
 knn_prediction = knn.predict(test_images[0:50]).tolist()
 
-# <markdowncell>
+
+# ###Random Forest
+
+# In[6]:
+
+## Random Forests Classifier
+# Training
+from sklearn.ensemble import RandomForestClassifier
+k = 100
+forest = RandomForestClassifier(n_estimators = 100)
+forest.fit(images, digits)
+
+
+# In[7]:
+
+# Prediction
+forest_prediction = forest.predict(test_images[0:50]).tolist()
+
 
 # ### Submissions
 
-# <codecell>
+# In[1]:
 
-def submit(prediction):
-    with open('submission.csv', 'wb') as outfile:
+def submit(prediction,file):
+    with open(file + '.csv', 'wb') as outfile:
         predwriter = csv.writer(outfile,delimiter="'",quotechar='|', quoting=csv.QUOTE_MINIMAL)
         
         predwriter.writerow(['ImageId','Label'])
