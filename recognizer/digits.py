@@ -53,7 +53,7 @@ def submit(prediction,file):
 
 # ### KNN Classifier
 
-# In[ ]:
+# In[14]:
 
 ## KNN Classifier
 # Training
@@ -63,13 +63,13 @@ knn = neighbors.KNeighborsClassifier(n_neighbors=k)
 knn.fit(images, digits)
 
 
-# In[ ]:
+# In[15]:
 
 # Prediction
 knn_prediction = knn.predict(test_images).tolist()
 
 
-# In[ ]:
+# In[16]:
 
 # Submission
 submit(knn_prediction,"digits_knn1.s")
@@ -77,7 +77,7 @@ submit(knn_prediction,"digits_knn1.s")
 
 # ###Random Forest
 
-# In[ ]:
+# In[8]:
 
 ## Random Forests Classifier
 # Training
@@ -87,13 +87,13 @@ forest = RandomForestClassifier(n_estimators = 100, n_jobs=6)
 forest.fit(images, digits)
 
 
-# In[ ]:
+# In[9]:
 
 # Prediction
 forest_prediction = forest.predict(test_images).tolist()
 
 
-# In[ ]:
+# In[10]:
 
 # Submission
 submit(forest_prediction,"forest_digits1")
@@ -101,7 +101,7 @@ submit(forest_prediction,"forest_digits1")
 
 # ### Naive Bayes
 
-# In[ ]:
+# In[11]:
 
 ## Naive Bayes Classifier
 # Training
@@ -110,13 +110,13 @@ nb = GaussianNB()
 nb.fit(images, digits)
 
 
-# In[ ]:
+# In[12]:
 
 # Prediction
 nb_prediction = nb.predict(test_images).tolist()
 
 
-# In[ ]:
+# In[13]:
 
 # Submission
 submit(nb_prediction,"nbayes_digits1")
