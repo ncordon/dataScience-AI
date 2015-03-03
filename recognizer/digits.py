@@ -1,14 +1,14 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 import csv
 
 
 # ### Dataset Input
 
-# In[3]:
+# In[2]:
 
 ## Train Dataset.
 images = [] # Images as vectors
@@ -19,11 +19,12 @@ with open('train.csv', 'rb') as trainfile:
     trainread.next() # Skips header
 
     for row in trainread: # Reads image and digit
+        row = [int(i) for i in row]
         digits.append(row[0])
         images.append(row[1:])
 
 
-# In[4]:
+# In[3]:
 
 ## Test Dataset
 test_images = []
@@ -33,12 +34,13 @@ with open('test.csv', 'rb') as testfile:
     testread.next() # Skips header
     
     for row in testread:
+        row = [int(i) for i in row]
         test_images.append(row)
 
 
 # ### Submissions
 
-# In[10]:
+# In[4]:
 
 def submit(prediction,file):
     with open(file + '.csv', 'wb') as outfile:
@@ -51,7 +53,7 @@ def submit(prediction,file):
 
 # ### KNN Classifier
 
-# In[4]:
+# In[ ]:
 
 ## KNN Classifier
 # Training
@@ -61,13 +63,13 @@ knn = neighbors.KNeighborsClassifier(n_neighbors=k)
 knn.fit(images, digits)
 
 
-# In[13]:
+# In[ ]:
 
 # Prediction
 knn_prediction = knn.predict(test_images).tolist()
 
 
-# In[14]:
+# In[ ]:
 
 # Submission
 submit(knn_prediction,"digits_knn1.s")
@@ -75,7 +77,7 @@ submit(knn_prediction,"digits_knn1.s")
 
 # ###Random Forest
 
-# In[5]:
+# In[ ]:
 
 ## Random Forests Classifier
 # Training
@@ -85,13 +87,13 @@ forest = RandomForestClassifier(n_estimators = 100, n_jobs=6)
 forest.fit(images, digits)
 
 
-# In[8]:
+# In[ ]:
 
 # Prediction
 forest_prediction = forest.predict(test_images).tolist()
 
 
-# In[11]:
+# In[ ]:
 
 # Submission
 submit(forest_prediction,"forest_digits1")
@@ -99,7 +101,7 @@ submit(forest_prediction,"forest_digits1")
 
 # ### Naive Bayes
 
-# In[1]:
+# In[ ]:
 
 ## Naive Bayes Classifier
 # Training
@@ -108,14 +110,19 @@ nb = GaussianNB()
 nb.fit(images, digits)
 
 
-# In[8]:
+# In[ ]:
 
 # Prediction
 nb_prediction = nb.predict(test_images).tolist()
 
 
-# In[11]:
+# In[ ]:
 
 # Submission
 submit(nb_prediction,"nbayes_digits1")
+
+
+# In[ ]:
+
+
 
