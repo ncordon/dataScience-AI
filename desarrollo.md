@@ -22,7 +22,7 @@ Todos los datos recolectados por una organización pueden ser útiles para
 mejorar las decisiones futuras de la organización. Para usar los enormes
 volúmenes de datos que se recolectan, es necesario encontrar patrones en
 ellos. Un ejemplo de uso de clasificación de datos lo constituyen los anuncios
-publicitarios de `Google Ads`: se recolecta información sobre las búsquedas en
+publicitarios de *Google Ads*: se recolecta información sobre las búsquedas en
 la web de un usuario y se le muestra un determinado tipo de anuncios en función
 de la clasificación de sus preferencias a través de la información recolectada.
 Por tanto detrás de la clasificación de datos hay un beneficio económico
