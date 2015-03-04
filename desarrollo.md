@@ -22,7 +22,7 @@ Todos los datos recolectados por una organización pueden ser útiles para
 mejorar las decisiones futuras de la organización. Para usar los enormes
 volúmenes de datos que se recolectan, es necesario encontrar patrones en
 ellos. Un ejemplo de uso de clasificación de datos lo constituyen los anuncios
-publicitarios de \texttt{Google Adds}: se recolecta información sobre las búsquedas en
+publicitarios de `Google Ads`: se recolecta información sobre las búsquedas en
 la web de un usuario y se le muestra un determinado tipo de anuncios en función
 de la clasificación de sus preferencias a través de la información recolectada.
 Por tanto detrás de la clasificación de datos hay un beneficio económico
@@ -89,9 +89,22 @@ puede pertenecer a más de una clase, en cuyo caso las denominamos etiquetas.
 Por tanto, el problema requiere predecir, para cada nueva instancia, el conjunto de 
 etiquetas a las que pertenece.
 
-En general, este problema se puede tratar de dos maneras: transformación
-de los datos en uno o varios problemas de un tipo más simple, o adaptación
-de los algoritmos conocidos a este tipo de problemas.
+Observamos que esta variante del problema es mucho más difícil que las anteriores,
+puesto que el número de respuestas posibles aumenta exponencialmente con el número
+de etiquetas (2^l para l etiquetas). En general, este problema se puede tratar de 
+dos maneras: transformación de los datos en uno o varios problemas de un tipo más 
+simple, o adaptación de los algoritmos conocidos a este tipo de problemas.
 
 Por un lado, las transformaciones de los datos reducen el problema a tantos
-problemas binarios como etiquetas (transformación BR).
+problemas binarios como etiquetas (transformación Binary Relevance), o bien a 
+un problema multiclase considerando el conjunto de etiquetas de cada instancia 
+como una posible clase (transformación Label Powerset). Estas transformaciones 
+utilizan algún algoritmo de clasificación por debajo para realizar el trabajo 
+sobre los problemas más sencillos, y después agrupan o adaptan las soluciones 
+obtenidas a una para el problema multietiqueta.
+
+Por otro lado, algunos algoritmos que se utilizan se basan en mejorar la técnica
+Label Powerset reduciendo el número de etiquetas y entrenando varios clasificadores
+(algoritmos como HOMER, RAkEL), y otros tratan de adaptarse a la nueva situación
+realizando cálculos con las etiquetas (por ejemplo, ML-kNN, que realiza una cuenta
+de ocurrencias de etiquetas para las instancias más cercanas).
