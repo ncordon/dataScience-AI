@@ -15,3 +15,5 @@ text(fit, use.n=TRUE, all=TRUE, cex=.8)
 
 post(fit, file = "./tree.ps",
      title = "Diabetes decision tree")
+
+View(diabetes[c("Glucose","BloodPressure","SkinThickness","Insulin","Age","Diabetes")])
