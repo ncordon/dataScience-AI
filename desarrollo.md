@@ -79,3 +79,19 @@ problema. Por tanto, no solo se utiliza la gran capacidad de computación
 disponible, sino que se han de implementar heurísticas que nos permitan
 realizar la clasificación de los nuevos datos, de forma racional, es decir,
 atendiendo a ciertos criterios acerca de cómo se relacionan los datos.
+
+
+## Aplicación 3. Clasificación multietiqueta de música en emociones
+
+La detección de emociones en música se puede modelar como un problema de 
+clasificación multietiqueta. Un problema de este tipo implica que una instancia
+puede pertenecer a más de una clase, en cuyo caso las denominamos etiquetas.
+Por tanto, el problema requiere predecir, para cada nueva instancia, el conjunto de 
+etiquetas a las que pertenece.
+
+En general, este problema se puede tratar de dos maneras: transformación
+de los datos en uno o varios problemas de un tipo más simple, o adaptación
+de los algoritmos conocidos a este tipo de problemas.
+
+Por un lado, las transformaciones de los datos reducen el problema a tantos
+problemas binarios como etiquetas (transformación BR).
