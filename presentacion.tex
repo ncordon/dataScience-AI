@@ -269,6 +269,34 @@
 
   \subsection{Aplicación 1}
     \begin{frame}
+      \frametitle{Diagnóstico de la diabetes}
+      \begin{columns}[T]
+       \begin{column}{.5\textwidth}
+	 \justifying
+	 Estudiar los atributos de personas que han padecido o no diabetes ayuda a
+         la identificación de los factores de riesgo y la
+         predicción del riesgo de un paciente concreto a desarrollarla según sus atributos.
+         \\~\\
+         Este es un problema de clasificación binaria. Los pacientes son divididos en aquellos
+         de los que se predice que padecerán diabetes y aquellos que no.
+         \\~\\
+         Para resolver este caso se propone el uso de \textbf{árboles de decisión}. 
+         
+       \end{column}
+       \begin{column}{.5\textwidth}
+	  \begin{center}
+	  \includegraphics[width=.8\textwidth]{imgs/knn.png} % From http://en.wikipedia.org/wiki/File:Map1NN.png
+	  \\ \centering \textit{KNN en dos dimensiones}
+	  \\~\\
+	  \includegraphics[width=.8\textwidth]{imgs/digit_database.jpg} % From http://cs-people.bu.edu/athitsos/nearest-neighbors/
+	  \\ \centering \textit{Ejemplo de reconocimiento}
+	  \end{center}
+       \end{column}
+      \end{columns}
+    \end{frame}
+    
+  \subsection{Aplicación 2}
+    \begin{frame}
       \frametitle{Reconocedor de dígitos}
       \begin{columns}[T]
        \begin{column}{.5\textwidth}
@@ -279,7 +307,7 @@
          Este es un problema de clasificación multiclase. Cada entrada deberá ser identificada
          como uno de los diez posibles dígitos.
          \\~\\
-         Para resolver este caso se propone el algoritmo KNN (K-Nearest neighbors). 
+         Para resolver este caso se propone el \textbf{algoritmo KNN} (K-Nearest neighbors). 
          Ubicamos el dígito de entrada en un espacio métrico significativo y tomamos la clase mayoritaria 
          entre sus $k$ vecinos más cercanos. La inteligencia que exhibe el sistema vendrá
          determinada por la semántica del espacio métrico.
