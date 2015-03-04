@@ -18,6 +18,31 @@ para tomar decisiones basadas en la información.
  * Mejora de la vida de las personas:
      Automatización de procesos. Detección de enfermedades.
 
+Todos los datos recolectados por una organización pueden ser útiles para
+mejorar las decisiones futuras de la organización. Para usar los enormes
+volúmenes de datos que se recolectan, es necesario encontrar patrones en
+ellos. Un ejemplo de uso de clasificación de datos lo constituyen los anuncios
+publicitarios de \texttt{Google Adds}: se recolecta información sobre las búsquedas en
+la web de un usuario y se le muestra un determinado tipo de anuncios en función
+de la clasificación de sus preferencias a través de la información recolectada.
+Por tanto detrás de la clasificación de datos hay un beneficio económico
+potencialmente explotable.
+
+La clasificación puede usarse para predecir enfermedades (se estudia si una
+persona tiene características genéticas determinadas y se puede predecir si padecerá o
+podría padecer la enfermedad en función de ellas).
+
+Puede suponer un importante ahorro en recursos para una empresa, esto es, se estudia qué
+datos de los almacenados por una empresa resultan más relevantes para su utilidad, y se reducen
+los recursos destinados a los menos relevantes.
+    
+Resulta relevante para las empresas la creación de perfiles de clientes efectuando 
+clasificación a partir de unos datos aportados por el usuario. Por ejemplo, existen
+empresas de préstamos rápidos vía contacto telefónico o internet que predicen si un 
+determinado usuario devolverá el préstamo a partir de las respuestas aportadas por el mismo
+a una serie de preguntas.
+
+
 Referencia: Alex A. Freitas - A Survey of Evolutionary Algorithms for Data
 Mining and Knowledge Discovery - Introduction
 
