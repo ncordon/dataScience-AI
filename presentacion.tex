@@ -264,18 +264,21 @@
       \frametitle{Reconocedor de dígitos}
       \begin{columns}[T]
        \begin{column}{.5\textwidth}
-         Párrafo explicando el reconocimiento de dígitos.
-         
-         Párrafo explicando la clasificación binaria.
-         
-         Párrafo explicando el algoritmo KNN. Ubicamos los dígitos en un
-         espacio métrico significativo y tomamos la clase mayoritaria entre
-         los $k$ vecinos más cercanos.
+         El reconocimiento automático de dígitos y letras permite a los ordenadores
+         leer entradas desde papeles manuscritos o fotografías.
+         \\~\\
+         Este es un problema de clasificación multiclase. Cada entrada deberá ser identificada
+         como uno de los diez posibles dígitos.
+         \\~\\
+         Para resolver este caso se propone el algoritmo KNN (K-Nearest neighbors). 
+         Ubicamos el dígito de entrada en un espacio métrico significativo y tomamos la clase mayoritaria 
+         entre sus $k$ vecinos más cercanos. La inteligencia que exhibe el sistema vendrá
+         determinada por la semántica del espacio métrico.
        \end{column}
        \begin{column}{.5\textwidth}
-	  Imagen del dataset
-        
-	  Imagen del KNN
+	  \includegraphics[width=\textwidth]{imgs/knn.png} % From http://en.wikipedia.org/wiki/File:Map1NN.png
+	  \\~\\
+	  \includegraphics[width=\textwidth]{imgs/digit_database.jpg} % From http://cs-people.bu.edu/athitsos/nearest-neighbors/
        \end{column}
       \end{columns}
     \end{frame}
