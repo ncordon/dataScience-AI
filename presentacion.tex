@@ -26,7 +26,7 @@
 %	PAQUETES Y CONFIGURACIÓN DEL DOCUMENTO
 %----------------------------------------------------------------------------------------
 
-\documentclass{beamer}
+\documentclass[8pt]{beamer}
 \geometry{paperwidth=140mm,paperheight=105mm}
 
 %% Configuración de la presentación
@@ -188,11 +188,11 @@
     
      \begin{column}{.5\textwidth}
        Un problema de clasificación es el problema de asignar una clase a cada una de
-       las instancias de un conjunto en función de sus atributos.
+       las instancias de un conjunto en función de sus atributos. 
        
        Normalmente poseeremos un conjunto de instancias de entrenamiento, ya clasificadas, que
        usaremos como base para que el ordenador aprenda a clasificar las siguientes.
-
+       
        El problema consistirá en clasificar las nuevas instancias que nos vayan
        llegando, de las que sólo conoceremos los atributos.
      \end{column}
@@ -262,6 +262,25 @@
   \subsection{Aplicación 1}
     \begin{frame}
       \frametitle{Reconocedor de dígitos}
+      \begin{columns}[T]
+       \begin{column}{.5\textwidth}
+         El reconocimiento automático de dígitos y letras permite a los ordenadores
+         leer entradas desde papeles manuscritos o fotografías.
+         \\~\\
+         Este es un problema de clasificación multiclase. Cada entrada deberá ser identificada
+         como uno de los diez posibles dígitos.
+         \\~\\
+         Para resolver este caso se propone el algoritmo KNN (K-Nearest neighbors). 
+         Ubicamos el dígito de entrada en un espacio métrico significativo y tomamos la clase mayoritaria 
+         entre sus $k$ vecinos más cercanos. La inteligencia que exhibe el sistema vendrá
+         determinada por la semántica del espacio métrico.
+       \end{column}
+       \begin{column}{.5\textwidth}
+	  \includegraphics[width=\textwidth]{imgs/knn.png} % From http://en.wikipedia.org/wiki/File:Map1NN.png
+	  \\~\\
+	  \includegraphics[width=\textwidth]{imgs/digit_database.jpg} % From http://cs-people.bu.edu/athitsos/nearest-neighbors/
+       \end{column}
+      \end{columns}
     \end{frame}
 
 
