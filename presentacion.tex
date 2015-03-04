@@ -107,6 +107,13 @@
 \usepackage[T1]{fontenc}
 \selectlanguage{spanish}
 
+%% Justificación del texto
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\addtobeamertemplate{block begin}{}{\justifying}
+\apptocmd{\frame}{\justifying}{}{}
+%\apptocmd{\column}{\justifying}{}{}
+
 %----------------------------------------------------------------------------------------
 %	TÍTULO
 %----------------------------------------------------------------------------------------
@@ -187,6 +194,7 @@
     \begin{columns}[T]
     
      \begin{column}{.5\textwidth}
+       \justifying
        Un problema de clasificación es el problema de asignar una clase a cada una de
        las instancias de un conjunto en función de sus atributos. 
        
@@ -264,6 +272,7 @@
       \frametitle{Reconocedor de dígitos}
       \begin{columns}[T]
        \begin{column}{.5\textwidth}
+	 \justifying
          El reconocimiento automático de dígitos y letras permite a los ordenadores
          leer entradas desde papeles manuscritos o fotografías.
          \\~\\
