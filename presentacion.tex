@@ -107,6 +107,13 @@
 \usepackage[T1]{fontenc}
 \selectlanguage{spanish}
 
+%% Justificación del texto
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\addtobeamertemplate{block begin}{}{\justifying}
+\apptocmd{\frame}{\justifying}{}{}
+%\apptocmd{\column}{\justifying}{}{}
+
 %----------------------------------------------------------------------------------------
 %	TÍTULO
 %----------------------------------------------------------------------------------------
@@ -187,12 +194,13 @@
     \begin{columns}[T]
     
      \begin{column}{.5\textwidth}
+       \justifying
        Un problema de clasificación es el problema de asignar una clase a cada una de
        las instancias de un conjunto en función de sus atributos. 
-       
+       \\~\\
        Normalmente poseeremos un conjunto de instancias de entrenamiento, ya clasificadas, que
        usaremos como base para que el ordenador aprenda a clasificar las siguientes.
-       
+       \\~\\
        El problema consistirá en clasificar las nuevas instancias que nos vayan
        llegando, de las que sólo conoceremos los atributos.
      \end{column}
@@ -264,6 +272,7 @@
       \frametitle{Reconocedor de dígitos}
       \begin{columns}[T]
        \begin{column}{.5\textwidth}
+	 \justifying
          El reconocimiento automático de dígitos y letras permite a los ordenadores
          leer entradas desde papeles manuscritos o fotografías.
          \\~\\
@@ -276,9 +285,13 @@
          determinada por la semántica del espacio métrico.
        \end{column}
        \begin{column}{.5\textwidth}
-	  \includegraphics[width=\textwidth]{imgs/knn.png} % From http://en.wikipedia.org/wiki/File:Map1NN.png
+	  \begin{center}
+	  \includegraphics[width=.8\textwidth]{imgs/knn.png} % From http://en.wikipedia.org/wiki/File:Map1NN.png
+	  \\ \centering \textit{KNN en dos dimensiones}
 	  \\~\\
-	  \includegraphics[width=\textwidth]{imgs/digit_database.jpg} % From http://cs-people.bu.edu/athitsos/nearest-neighbors/
+	  \includegraphics[width=.8\textwidth]{imgs/digit_database.jpg} % From http://cs-people.bu.edu/athitsos/nearest-neighbors/
+	  \\ \centering \textit{Ejemplo de reconocimiento}
+	  \end{center}
        \end{column}
       \end{columns}
     \end{frame}
