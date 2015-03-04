@@ -97,6 +97,7 @@
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 
+\newcommand{\hlink}[2]{{\color{blue}\href{#1}{#2}}}
 %%% Castellano.
 % noquoting: Permite uso de comillas no españolas.
 % lcroman: Permite la enumeración con numerales romanos en minúscula.
@@ -215,17 +216,49 @@
     Todos los datos recolectados por una organización pueden ser útiles para
     mejorar las decisiones futuras de la organización. Para usar los enormes
     volúmenes de datos que se recolectan, es necesario encontrar patrones en
-    ellos.
+    ellos. La clasificación de datos se emplea en:
     
+    \pause
+    \begin{itemize}[<+->]
+     \item Predicción de enfermedades
+     \item Generación de perfiles de usuarios por empresas
+     \item Toma de decisiones en una organización, minimizando riesgos empresariales
+     \item Reducción de recursos dedicados al almacenamiento de datos por una empresa
+    \end{itemize}
   \end{frame}
   
 
 \section{Justificación del uso de IA}
   \begin{frame}
     \frametitle{Justificación del uso de IA}
+      La mayoría de los cometidos que implican inteligencia requieren abilidad
+      para extraer conocimiento de experiencias. En los problemas de clasificación
+      resulta de gran importancia los llamados algoritmos de \textbf{machine learning},
+      es decir, la extracción de información de manera automática estableciendo patrones
+      que permitan efectuar una clasificación de datos. Por tanto, puesto que
+      \textbf{clasificación} $\Longrightarrow$ \textbf{predicción}, estamos ante un claro problema de IA.
   \end{frame}
 
 \section{Aplicaciones relevantes}
+  \begin{frame}
+   Según las características ausentes en los datos, la clasificación puede ser:
+   \pause
+   \begin{itemize}[<+->]
+    \item \textbf{Binaria:} clasificar en 2 clases (0-1, Verdadero-Falso). Ej.
+      Dataset sobre la predicción de la diabetes 
+      \hlink{https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes}{Pima Indians Diabetes}
+    \item \textbf{Multiclase:} se usa una característica con tantos valores como clases, de
+      manera que se clasifican los datos en más de dos clases. Como ejemplo extraído de la plataforma
+    \hlink{http://www.Kaggle.com}{Kaggle} se plantea el problema del 
+    \hlink{https://www.kaggle.com/c/digit-recognizer}{Reconocedor de dígitos}
+    \item \textbf{Multietiqueta:} cada instancia se puede asociar a más de una etiqueta($\approx$ clase).
+    
+    % Nombrar multidimensional en la explicación
+   \end{itemize}
+
+   
+  \end{frame}
+
   \subsection{Aplicación 1}
     \begin{frame}
       \frametitle{Reconocedor de dígitos}
@@ -242,6 +275,12 @@
       \newblock Inteligencia Artificial, Inteligencia Computacional y Big Data
       \newblock Capítulo A
       \newblock \emph{Universidad de Jaén (2015)}
+      
+      % Para la parte de clasificación. Está chulo eso de poder citarte a ti mismo en tu trabajo ;)
+     \bibitem[Charte]{c1} David Charte Luque
+      \newblock Apuntes sobre Minería de Datos
+      \newblock \hlink{https://github.com/dgiim/data-mining-classification}{data-mining-classification}
+      \newblock \emph{Universidad de Granada (2014)}
   \end{thebibliography}
 }
 \end{frame}
