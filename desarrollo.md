@@ -108,3 +108,19 @@ Label Powerset reduciendo el número de etiquetas y entrenando varios clasificad
 (algoritmos como HOMER, RAkEL), y otros tratan de adaptarse a la nueva situación
 realizando cálculos con las etiquetas (por ejemplo, ML-kNN, que realiza una cuenta
 de ocurrencias de etiquetas para las instancias más cercanas).
+
+Algunos de los avances en el tratamiento de este problema, sin embargo, no están
+en la clasificación en sí, sino en el preprocesamiento del dataset (un tratamiento
+que se realiza a los datos para mejorar la solución del clasificador). Existen
+nuevas técnicas que, basándose en medidas de desequilibrio de etiquetas y otras
+relaciones entre ellas, permiten actuar sobre el dataset (por ejemplo, desactivando
+etiquetas mayoritarias de ciertas instancias) de forma que al aplicar
+un clasificador sobre él los resultados sean mejores.
+
+Referencias:
+  - Min-Ling Zhang; Zhi-Hua Zhou - ML-kNN: A Lazy Learning Approach to Multi-Label 
+  Learning
+  - Tsoumakas, G.; Katakis, I.; Vlahavas, I. - Effective and Efficient Multilabel 
+  Classification in Domains with Large Number of Labels
+  - Tsoumakas, G.; Katakis, I.; Vlahavas, I. - Random k-Labelsets for Multi-Label 
+  Classification
