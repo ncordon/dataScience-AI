@@ -117,7 +117,17 @@ relaciones entre ellas, permiten actuar sobre el dataset (por ejemplo, desactiva
 etiquetas mayoritarias de ciertas instancias) de forma que al aplicar
 un clasificador sobre él los resultados sean mejores.
 
+Para la aplicación de clasificación de música, se utilizaron casi 600 fragmentos
+de canciones de 30 segundos y se analizaron el ritmo y el timbre, dando lugar a 
+más de 70 atributos de entrada para cada canción. En la figura siguiente se
+muestra visualmente cómo se relacionan sus 6 etiquetas, algo que un algoritmo de
+preprocesamiento o clasificación deberá tener en cuenta y actuar en consecuencia:
+
+![emotions concurrence plot](imgs/emotions-concurrence.png)
+
 Referencias:
+  - Trohidis, K.; Tsoumakas, G.; Kalliris, G.; Vlahavas, I. - Multi-Label 
+  Classification of Music into Emotions
   - Min-Ling Zhang; Zhi-Hua Zhou - ML-kNN: A Lazy Learning Approach to Multi-Label 
   Learning
   - Tsoumakas, G.; Katakis, I.; Vlahavas, I. - Effective and Efficient Multilabel 
