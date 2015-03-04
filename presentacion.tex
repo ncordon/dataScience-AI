@@ -231,7 +231,7 @@
 \section{Justificación del uso de IA}
   \begin{frame}
     \frametitle{Justificación del uso de IA}
-      La mayoría de los cometidos que implican inteligencia requieren abilidad
+      La mayoría de los cometidos que implican inteligencia requieren habilidad
       para extraer conocimiento de experiencias. En los problemas de clasificación
       resulta de gran importancia los llamados algoritmos de \textbf{machine learning},
       es decir, la extracción de información de manera automática estableciendo patrones
@@ -241,17 +241,17 @@
 
 \section{Aplicaciones relevantes}
   \begin{frame}
+   \frametitle{Aplicaciones relevantes}
    Según las características ausentes en los datos, la clasificación puede ser:
    \pause
    \begin{itemize}[<+->]
-    \item \textbf{Binaria:} clasificar en 2 clases (0-1, Verdadero-Falso). Ej.
-      Dataset sobre la predicción de la diabetes 
-      \hlink{https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes}{Pima Indians Diabetes}
+    \item \textbf{Binaria:} las instancias pertenecen a una de 2 clases (0-1, Verdadero-Falso). Ej.
+      predicción de la diabetes a partir de datos médicos del paciente:
+      \hlink{https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes}{Pima Indians Diabetes}.
     \item \textbf{Multiclase:} se usa una característica con tantos valores como clases, de
-      manera que se clasifican los datos en más de dos clases. Como ejemplo extraído de la plataforma
-    \hlink{http://www.Kaggle.com}{Kaggle} se plantea el problema del 
+      manera que se clasifican los datos en más de dos clases. Ej. reconocimiento de texto a mano alzada, en concreto un
     \hlink{https://www.kaggle.com/c/digit-recognizer}{Reconocedor de dígitos}
-    \item \textbf{Multietiqueta:} cada instancia se puede asociar a más de una etiqueta($\approx$ clase).
+    \item \textbf{Multietiqueta:} cada instancia se puede asociar a más de una etiqueta ($\approx$ clase). Ej. clasificación de música según las emociones que transmite: \hlink{http://mlkd.csd.auth.gr/publication_details.asp?publicationID=269}{Emotions Dataset}
     
     % Nombrar multidimensional en la explicación
    \end{itemize}
@@ -284,6 +284,32 @@
     \end{frame}
 
 
+\subsection{Aplicación 3}
+  \begin{frame}
+	\frametitle{Clasificación de música según emociones}
+	\begin{columns}[T]
+		\begin{column}{.5\textwidth}
+			La detección de emociones en música se puede utilizar para la 
+			\textbf{selección de música} a partir de alguna de las emociones que transmita.
+			\\~\\
+			Se modela como un problema de clasificación \textbf{multietiqueta}:
+			cada canción puede inspirar más de una emoción
+			\\~\\
+			Las técnicas de preprocesamiento que se aplican aprenden de las
+			\textbf{relaciones entre etiquetas} para alterar los datos y que
+			un algoritmo de clasificación multietiqueta responda mejor.
+			
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\includegraphics[width=\textwidth]{imgs/emotions-concurrence}
+			\\~\\
+			\includegraphics[width=\textwidth]{imgs/emotions-dataset}
+			
+		\end{column}
+	\end{columns}
+  \end{frame}
+
+
 %% Bibliografía
 \section {Referencias}
 \begin{frame}
@@ -296,6 +322,8 @@
       \newblock \emph{Universidad de Jaén (2015)}
       
       % Para la parte de clasificación. Está chulo eso de poder citarte a ti mismo en tu trabajo ;)
+      % lol no hace falta esto, que va a quedar como que hemos reutilizado el 
+      % trabajo en vez de hacer algo nuevo :O
      \bibitem[Charte]{c1} David Charte Luque
       \newblock Apuntes sobre Minería de Datos
       \newblock \hlink{https://github.com/dgiim/data-mining-classification}{data-mining-classification}
