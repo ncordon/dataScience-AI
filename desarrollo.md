@@ -91,31 +91,45 @@ etiquetas a las que pertenece.
 
 Observamos que esta variante del problema es mucho más difícil que las anteriores,
 puesto que el número de respuestas posibles aumenta exponencialmente con el número
-de etiquetas (2^l para l etiquetas). En general, este problema se puede tratar de 
-dos maneras: transformación de los datos en uno o varios problemas de un tipo más 
-simple, o adaptación de los algoritmos conocidos a este tipo de problemas.
+de etiquetas (2^l para l etiquetas). No sólo eso, sino que desde el punto de vista
+del aprendizaje, ya no hay que tener en cuenta únicamente las relaciones entre los
+atributos, sino que además tenemos la posibilidad de estudiar las relaciones entre 
+las etiquetas.
 
-Por un lado, las transformaciones de los datos reducen el problema a tantos
-problemas binarios como etiquetas (transformación Binary Relevance), o bien a 
-un problema multiclase considerando el conjunto de etiquetas de cada instancia 
-como una posible clase (transformación Label Powerset). Estas transformaciones 
-utilizan algún algoritmo de clasificación por debajo para realizar el trabajo 
-sobre los problemas más sencillos, y después agrupan o adaptan las soluciones 
-obtenidas a una para el problema multietiqueta.
+En general, este problema se puede tratar de dos maneras: transformación de los 
+datos en uno o varios problemas de un tipo más simple, o adaptación de los algoritmos
+conocidos a este tipo de problemas. No se desarrollan técnicas propias en cuanto a
+algoritmos de clasificación multietiqueta porque las adaptaciones de algoritmos, o
+aquellos basados en las transformaciones, suelen ser suficientemente precisos.
 
-Por otro lado, algunos algoritmos que se utilizan se basan en mejorar la técnica
-Label Powerset reduciendo el número de etiquetas y entrenando varios clasificadores
-(algoritmos como HOMER, RAkEL), y otros tratan de adaptarse a la nueva situación
-realizando cálculos con las etiquetas (por ejemplo, ML-kNN, que realiza una cuenta
-de ocurrencias de etiquetas para las instancias más cercanas).
+<!-- El texto en cita es menos importante y se puede saltar si no hay tiempo -->
+> Por un lado, las transformaciones de los datos reducen el problema a tantos
+  problemas binarios como etiquetas (transformación Binary Relevance), o bien a 
+  un problema multiclase considerando el conjunto de etiquetas de cada instancia 
+  como una posible clase (transformación Label Powerset). Estas transformaciones 
+  utilizan algún algoritmo de clasificación por debajo para realizar el trabajo 
+  sobre los problemas más sencillos, y después agrupan o adaptan las soluciones 
+  obtenidas a una para el problema multietiqueta.
+
+> Por otro lado, algunos algoritmos que se utilizan se basan en mejorar la técnica
+  Label Powerset reduciendo el número de etiquetas y entrenando varios clasificadores
+  (algoritmos como HOMER, RAkEL), y otros tratan de adaptarse a la nueva situación
+  realizando cálculos con las etiquetas (por ejemplo, ML-kNN, que realiza una cuenta
+  de ocurrencias de etiquetas para las instancias más cercanas).
 
 Algunos de los avances en el tratamiento de este problema, sin embargo, no están
 en la clasificación en sí, sino en el preprocesamiento del dataset (un tratamiento
 que se realiza a los datos para mejorar la solución del clasificador). Existen
 nuevas técnicas que, basándose en medidas de desequilibrio de etiquetas y otras
 relaciones entre ellas, permiten actuar sobre el dataset (por ejemplo, desactivando
-etiquetas mayoritarias de ciertas instancias) de forma que al aplicar
-un clasificador sobre él los resultados sean mejores.
+etiquetas mayoritarias de ciertas instancias) de forma que al aplicar un 
+clasificador sobre él los resultados sean mejores.
+
+Uno de los algoritmos más interesantes es *HOMER*, que agrupa las etiquetas en
+grupos atendiendo a su similitud (si suelen aparecer juntas en las mismas 
+instancias) y crea clasificadores capaces de distinguir entre ellas, para luego
+reunir la información de todos los clasificadores en uno grande que solo distinga
+entre los grupos de etiquetas.
 
 Para la aplicación de clasificación de música, se utilizaron casi 600 fragmentos
 de canciones de 30 segundos y se analizaron el ritmo y el timbre, dando lugar a 
@@ -128,7 +142,8 @@ preprocesamiento o clasificación deberá tener en cuenta y actuar en consecuenc
 Referencias:
   - Trohidis, K.; Tsoumakas, G.; Kalliris, G.; Vlahavas, I. - Multi-Label 
   Classification of Music into Emotions
-  - Min-Ling Zhang; Zhi-Hua Zhou - ML-kNN: A Lazy Learning Approach to Multi-Label 
+
+> - Min-Ling Zhang; Zhi-Hua Zhou - ML-kNN: A Lazy Learning Approach to Multi-Label 
   Learning
   - Tsoumakas, G.; Katakis, I.; Vlahavas, I. - Effective and Efficient Multilabel 
   Classification in Domains with Large Number of Labels
