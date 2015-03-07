@@ -1,20 +1,18 @@
 ## Descripción del problema
 
-Un problema de clasificación consiste en asignar una clase a cada una de las
-instancias de un conjunto, en función del valor del resto de sus atributos (==características).
-Equivalentemente, se predice el atributo clase en una instancia dada, donde clase 
-puede tomar sólo un número finito de valores, con la restricción de que una instancia
-no puede pertenecer a dos clases simultáneamente.  (Por ejemplo, clasificar
-flores por especie según las medidas de sus pétalos)
+Un problema de clasificación consiste en asignar valores a los atributos de salida
+(en general, la clase) a cada una de las instancias de un conjunto, en función del
+valor del resto de sus atributos, los atributos de entrada o características. Es
+decir, se trata de predecir una clase para una instancia dada, de la que solo se
+conocen los atributos de entrada. Por ejemplo, podríamos tratar de clasificar
+flores por especie según las medidas de sus pétalos y sépalos.
 
-Se parte de un conjunto de instancias ya clasificadas, llamadas conjunto de entrenamiento,
+Se parte de un conjunto de instancias ya clasificadas, llamado conjunto de entrenamiento,
 con las que se generará un clasificador (una función capaz de predecir la clase para
-una instancia dada).
-
-Para cada una de las instancias del conjunto de datos test(de las que se desconoce
-su clase y son conocidos el resto de atributos) se predecirá la clase, usando para
-ello el clasificador generado. (En el ejemplo, tenemos un conjunto de flores de las 
-que conocemos la especie ya clasificadas).
+cada instancia nueva). El clasificador se utilizará para predecir la clase de las
+instancias del conjunto de datos *test*, de las que solo se conocen los atributos de
+entrada. En el ejemplo, tenemos un conjunto de flores de las que conocemos la especie,
+y aprendemos de ellas para averiguar la especie de nuevas flores.
 
 ## Relevancia del problema.
 
