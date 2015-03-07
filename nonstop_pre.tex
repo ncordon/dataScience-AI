@@ -279,7 +279,7 @@
 	      manera que se clasifican los datos en más de dos clases. Ej. reconocimiento de texto a mano alzada, en concreto un
 	      \hlink{https://www.kaggle.com/c/digit-recognizer}{Reconocedor de dígitos}
 	  \item \textbf{Multietiqueta:} cada instancia se puede asociar a más de una etiqueta ($\approx$ clase). 
-	      Ej. clasificación de música según las emociones que transmite: \hlink{http://mlkd.csd.auth.gr/publication_details.asp?publicationID=269}{Emotions Dataset}
+	      Ej. clasificación de música según las emociones que transmite: \hlink{http://mlkd.csd.auth.gr/publication\_details.asp?publicationID=269}{Emotions Dataset}
 	  % Nombrar multidimensional en la explicación
 	  \end{itemize}
 	\end{column}
@@ -295,7 +295,7 @@
   \subsection{Aplicación 1}
     \begin{frame}
       \frametitle{Diagnóstico de la diabetes}
-      \begin{columns}[T]
+      \begin{columns}[c]
        \begin{column}{.5\textwidth}
 	 \justifying
 	 Estudiar los atributos de personas que han padecido o no diabetes ayuda a
@@ -322,7 +322,7 @@
   \subsection{Aplicación 2}
     \begin{frame}
       \frametitle{Reconocedor de dígitos}
-      \begin{columns}[T]
+      \begin{columns}[c]
        \begin{column}{.5\textwidth}
 	 \justifying
          El reconocimiento automático de dígitos y letras permite a los ordenadores
@@ -352,7 +352,7 @@
 \subsection{Aplicación 3}
   \begin{frame}
 	\frametitle{Clasificación de música según emociones}
-	\begin{columns}[T]
+	\begin{columns}[c]
 		\begin{column}{.5\textwidth}
 			La detección de emociones en música se puede utilizar para la 
 			\textbf{selección de música} a partir de alguna de las emociones que transmita.
@@ -389,24 +389,35 @@
 \footnotesize{
   \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
     \bibitem[Herrera, 2015]{h1} Francisco Herrera Triguero
-      \newblock Inteligencia Artificial, Inteligencia Computacional y Big Data
-      \newblock Capítulo A
+      \newblock Inteligencia Artificial, Inteligencia Computacional y Big Data (Capítulo A)
       \newblock \emph{Universidad de Jaén (2015)}
-      
       % Para la parte de clasificación. Está chulo eso de poder citarte a ti mismo en tu trabajo ;)
       % lol no hace falta esto, que va a quedar como que hemos reutilizado el 
       % trabajo en vez de hacer algo nuevo :O
-     \bibitem[Charte]{c1} David Charte Luque
-      \newblock Apuntes sobre Minería de Datos
-      \newblock \hlink{https://github.com/dgiim/data-mining-classification}{data-mining-classification}
-      \newblock \emph{Universidad de Granada (2014)}
+     %\bibitem[Charte]{c1} David Charte Luque
+      %\newblock Apuntes sobre Minería de Datos
+      %\newblock \hlink{https://github.com/dgiim/data-mining-classification}{data-mining-classification}
+      %\newblock \emph{Universidad de Granada (2014)}
       
-      \bibitem[Freitas]{f1} Alex A. Freitas
-       \newblock A Survey of Evolutionary Algorithms for Data Mining and Knowledge Discovery
-       \newblock Introduction
+     \bibitem[Freitas]{f1} Alex A. Freitas
+       \newblock Advances in Evolutionary Computing (A Survey of Evolutionary Algorithms for Data Mining and Knowledge Discovery - Introduction)
+       \newblock Springer (2003), DOI 10.1007/978-3-642-18965-4\_33
        
-      \bibitem[UCI]{uci} UCI Machine Learning Repository
-	\newblock Dataset \hlink{https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes}{Pima Indians Diabetes}
+     \bibitem[Wikibooks]{dmR} Varios autores (Wikibooks)
+       \newblock Data Mining Algorithms in R (Classification)
+       \newblock URL \hlink{https://en.wikibooks.org/wiki/Data\_Mining\_Algorithms\_In\_R/Classification}{https://en.wikibooks.org/wiki/Data\_Mining\_Algorithms\_In\_R/Classification}
+       
+     \bibitem[Pima Indians Diabetes]{diabetes} National Institute of Diabetes and Digestive and Kidney Diseases
+	   \newblock Dataset Pima Indians Diabetes
+	   \newblock UCI Machine Learning Repository, URL \hlink{https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes}{https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes}
+	 
+	 \bibitem[MNIST]{digits} Y. LeCun, C. Cortes, C. Burges
+	   \newblock MNIST database of handwritten digits
+	   \newblock URL \hlink{http://yann.lecun.com/exdb/mnist/}{http://yann.lecun.com/exdb/mnist/}
+
+	\bibitem[Trohidis, 2008]{emotions} K. Trohidis, G. Tsoumakas, G. Kalliris, I. Vlahavas
+		\newblock Multilabel Classification of Music into Emotions - Proc. 9th International Conference on Music Information Retrieval
+		\newblock ISMIR 2008, pp. 325-330, URL \hlink{http://mlkd.csd.auth.gr/publication\_details.asp?publicationID=269}{http://mlkd.csd.auth.gr/publication\_details.asp?publicationID=269}
   \end{thebibliography}
 }
 \end{frame}
