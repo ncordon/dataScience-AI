@@ -266,21 +266,29 @@
 \section{Aplicaciones relevantes}
   \begin{frame}
    \frametitle{Aplicaciones relevantes}
-   Según las características ausentes en los datos, la clasificación puede ser:
-   \pause
-   \begin{itemize}[<+->]
-    \item \textbf{Binaria:} las instancias pertenecen a una de 2 clases (0-1, Verdadero-Falso). Ej.
-      predicción de la diabetes a partir de datos médicos del paciente:
-      \hlink{https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes}{Pima Indians Diabetes}.
-    \item \textbf{Multiclase:} se usa una característica con tantos valores como clases, de
-      manera que se clasifican los datos en más de dos clases. Ej. reconocimiento de texto a mano alzada, en concreto un
-    \hlink{https://www.kaggle.com/c/digit-recognizer}{Reconocedor de dígitos}
-    \item \textbf{Multietiqueta:} cada instancia se puede asociar a más de una etiqueta ($\approx$ clase). Ej. clasificación de música según las emociones que transmite: \hlink{http://mlkd.csd.auth.gr/publication_details.asp?publicationID=269}{Emotions Dataset}
-    
-    % Nombrar multidimensional en la explicación
-   \end{itemize}
-
-   
+   \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+	Según las características ausentes en los datos, la clasificación puede ser:
+	\pause
+	\begin{itemize}[<+->]
+	  \item \textbf{Binaria:} las instancias pertenecen a una de 2 clases (0-1, Verdadero-Falso). Ej.
+	      predicción de la diabetes a partir de datos médicos del paciente:
+	      \hlink{https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes}{Pima Indians Diabetes}.
+	  \item \textbf{Multiclase:} se usa una característica con tantos valores como clases, de
+	      manera que se clasifican los datos en más de dos clases. Ej. reconocimiento de texto a mano alzada, en concreto un
+	      \hlink{https://www.kaggle.com/c/digit-recognizer}{Reconocedor de dígitos}
+	  \item \textbf{Multietiqueta:} cada instancia se puede asociar a más de una etiqueta ($\approx$ clase). 
+	      Ej. clasificación de música según las emociones que transmite: \hlink{http://mlkd.csd.auth.gr/publication_details.asp?publicationID=269}{Emotions Dataset}
+	  % Nombrar multidimensional en la explicación
+	  \end{itemize}
+	\end{column}
+     \begin{column}{.5\textwidth}
+       \includegraphics[width=\textwidth]{imgs/diabetes.png}\\
+       \pause
+       \includegraphics[width=\textwidth]{imgs/captcha.jpg}
+      \end{column}
+      
+     \end{columns}   
   \end{frame}
 
   \subsection{Aplicación 1}
