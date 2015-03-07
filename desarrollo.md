@@ -1,7 +1,25 @@
+## Descripción del problema
+
+Un problema de clasificación consiste en asignar una clase a cada una de las
+instancias de un conjunto, en función del valor del resto de sus atributos (==características).
+Equivalentemente, se predice el atributo clase en una instancia dada, donde clase 
+puede tomar sólo un número finito de valores, con la restricción de que una instancia
+no puede pertenecer a dos clases simultáneamente.  (Por ejemplo, clasificar
+flores por especie según las medidas de sus pétalos)
+
+Se parte de un conjunto de instancias ya clasificadas, llamadas conjunto de entrenamiento,
+con las que se generará un clasificador (una función capaz de predecir la clase para
+una instancia dada).
+
+Para cada una de las instancias del conjunto de datos test(de las que se desconoce
+su clase y son conocidos el resto de atributos) se predecirá la clase, usando para
+ello el clasificador generado. (En el ejemplo, tenemos un conjunto de flores de las 
+que conocemos la especie ya clasificadas).
+
 ## Relevancia del problema.
 
 Diariamente se recopilan enormes cantidades de datos e información útil desde
-redes sociales, ventas, organizaciones [... % Rellenar]
+redes sociales, ventas, organizaciones.
 Toda esta información sólo es útil si se extraen patrones y conocimiento de
 estas grandes bases de datos. Ese conocimiento puede usarse para predecir y
 para tomar decisiones basadas en la información.
@@ -9,59 +27,40 @@ para tomar decisiones basadas en la información.
  * Beneficios económicos:
      Optimización de decisiones logísticas y empresariales (tratamientos en
      hospitales, ventas de la empresa). Automatización de procesos humanos
-     (detección y clasificación de especies o de dígitos).
+     (detección y clasificación de especies o de dígitos). 
+     
+     Todos los datos recolectados por una organización pueden ser útiles para mejorar 
+     las decisiones futuras de la organización. Para usar los enormes volúmenes 
+     de datos que se recolectan, es necesario encontrar patrones en ellos. Un
+     ejemplo de uso de clasificación de datos lo constituyen los anuncios
+     publicitarios de *Google Ads*: se recolecta información sobre las búsquedas 
+     en la web de un usuario y se le muestra un determinado tipo de anuncios 
+     en función de la clasificación de sus preferencias a través de la información
+     recolectada. Por tanto detrás de la clasificación de datos hay un beneficio
+     económico potencialmente explotable.
+
+     Puede suponer un importante ahorro en recursos para una empresa, esto es, se estudia qué
+     datos de los almacenados por una empresa resultan más relevantes para su utilidad, y se reducen
+     los recursos destinados a los menos relevantes.
 
  * Beneficios para los usuarios:
      Aprovechan el conocimiento de las grandes bases de datos en servicios
-     (recomendaciones personalizadas, inteligencia)
+     (recomendaciones personalizadas, inteligencia).
+     
+     Ejemplo de recomendaciones personalizadas son por ejemplo las que efectúa *Youtube*
+     cuando nos sugiere vídeos que podrían ser de nuestro agrado.
+     
+     Resulta relevante para las empresas la creación de perfiles de clientes efectuando 
+     clasificación a partir de unos datos aportados por el usuario. Por ejemplo, existen
+     empresas de préstamos rápidos vía contacto telefónico o internet que predicen si un 
+     determinado usuario devolverá el préstamo a partir de las respuestas aportadas por el mismo
+     a una serie de preguntas.     
 
  * Mejora de la vida de las personas:
-     Automatización de procesos. Detección de enfermedades.
-
-Todos los datos recolectados por una organización pueden ser útiles para
-mejorar las decisiones futuras de la organización. Para usar los enormes
-volúmenes de datos que se recolectan, es necesario encontrar patrones en
-ellos. Un ejemplo de uso de clasificación de datos lo constituyen los anuncios
-publicitarios de *Google Ads*: se recolecta información sobre las búsquedas en
-la web de un usuario y se le muestra un determinado tipo de anuncios en función
-de la clasificación de sus preferencias a través de la información recolectada.
-Por tanto detrás de la clasificación de datos hay un beneficio económico
-potencialmente explotable.
-
-La clasificación puede usarse para predecir enfermedades (se estudia si una
-persona tiene características genéticas determinadas y se puede predecir si padecerá o
-podría padecer la enfermedad en función de ellas).
-
-Puede suponer un importante ahorro en recursos para una empresa, esto es, se estudia qué
-datos de los almacenados por una empresa resultan más relevantes para su utilidad, y se reducen
-los recursos destinados a los menos relevantes.
-    
-Resulta relevante para las empresas la creación de perfiles de clientes efectuando 
-clasificación a partir de unos datos aportados por el usuario. Por ejemplo, existen
-empresas de préstamos rápidos vía contacto telefónico o internet que predicen si un 
-determinado usuario devolverá el préstamo a partir de las respuestas aportadas por el mismo
-a una serie de preguntas.
-
-
-Referencia: Alex A. Freitas - A Survey of Evolutionary Algorithms for Data
-Mining and Knowledge Discovery - Introduction
-
-## Descripción del problema
-
-Extracción de conocimiento de grandes bases de datos.
-
-Un problema de clasificación es el problema de asignar una clase a cada una de
-las instancias de un conjunto en función de sus atributos. (Por ejemplo,
-clasificar flores por especie según las medidas de sus pétalos)
-
-Normalmente poseeremos un conjunto de instancias de entrenamiento, ya clasificadas, que
-usaremos como base para que el ordenador aprenda a clasificar las siguientes.
-(En el ejemplo, tenemos un conjunto de flores de las que conocemos la especie ya
-clasificadas).
-
-El problema consistirá en clasificar las nuevas instancias que nos vayan
-llegando, de las que sólo conoceremos los atributos.
-
+     Automatización de procesos. Detección de enfermedades. La clasificación puede
+     usarse para predecir enfermedades (se estudia si una persona tiene características
+     genéticas determinadas y se puede predecir si padecerá o podría padecer la enfermedad
+     en función de su perfil genético).
 
 
 ## Justificación del uso de la IA
@@ -80,6 +79,55 @@ disponible, sino que se han de implementar heurísticas que nos permitan
 realizar la clasificación de los nuevos datos, de forma racional, es decir,
 atendiendo a ciertos criterios acerca de cómo se relacionan los datos.
 
+## Aplicación 1. Predicción de la diabetes
+
+Se dispone de unos determinados factores médicos para una persona (número de embarazos,
+niveles de azúcar en sangre, presión sanguínea, edad ...) y se pretende predecir
+si una persona padecerá diabetes o no en función de los valores que presente para
+dichos factores médicos.
+
+Nos encontramos ante un problema de clasificación binaria (tenemos dos valores posibles
+para el atributo Diabetes - 0,1). Uno de los clasificadores que ofrece buenos resultados 
+para este problema son los árboles de decisión (ejemplos de algoritmos para generar dichos
+árboles son C4.5, ID3, CART,...).
+
+Los algoritmos de creación de árboles se basan en:
+
+* Selección de atributos:
+     Se escoge a cada paso el atributo que mejor separación efectúe entre los
+     datos. Matemáticamente, este atributo es el que maximiza medidas como la ganancia de información (IG).
+     En el árbol este paso se refleja en la creación de un nodo.
+
+* Selección de clase:
+     Se convierte un nodo del árbol en hoja cuando todas las instancias que cumplen la condición
+     de dicho nodo son de la misma clase; o bien cuando se acaban los atributos por los que ramificar
+     el árbol (en dicho caso la clase del nodo hoja es la mayoritaria del conjunto que cumpla las
+     condiciones de dicho nodo); o bien cuando ninguna instancia cumple las condiciones de dicho nodo,
+     en cuyo caso, el nodo tendrá la clase mayoritaria del padre.
+
+## Aplicación 2. Reconocedor de dígitos
+
+El problema consiste en dada una imagen en blanco y negro cuadrada, que contiene
+píxeles codificados como un número entero entre 0 y 255 (donde el 0 es blanco
+y el valor 255 representa el color negro), se pretende predecir en base al
+valor de dichos píxeles, qué dígito es el que contiene la imagen.
+
+La importancia de este problema, que podría extenderse a letras también, reside en
+la detección automática de captchas, que es explotada por programas de descarga 
+automática como *JDownloader*.
+
+Se trata de un problema multiclase (tenemos 10 clases - dígitos del 0 al 9).
+Para su resolución se puede emplear el algoritmo de clasificación KNN (K Nearest neighbors).
+Este algoritmo consiste en dado un espacio métrico (y por tanto una función distancia),
+hallar para una instancia dada los k puntos más cercanos a la misma del conjunto
+de entrenamiento, y tomar la clase mayoritaria de entre los mismos.
+
+En el problema resuelto como ejemplo, las imágenes son de 28x28 píxeles, y los
+conjuntos de entrenamiento y de test tienen cada uno 42000 instancias, lo que ofrece
+una visión de que este problema no puede ser resuelto sin apoyo de técnicas computacionales.
+
+La precisión del algoritmo en la predicción dependerá del espacio métrico en el que nos
+hallemos.
 
 ## Aplicación 3. Clasificación multietiqueta de música en emociones
 
