@@ -1,3 +1,5 @@
+# Clasificación en la ciencia de datos
+
 ## Descripción del problema
 
 Un problema de clasificación consiste en asignar valores a los atributos de salida
@@ -29,14 +31,14 @@ para tomar decisiones basadas en la información.
  * Beneficios económicos:
      Optimización de decisiones logísticas y empresariales (tratamientos en
      hospitales, ventas de la empresa). Automatización de procesos humanos
-     (detección y clasificación de especies o de dígitos). 
-     
-     Todos los datos recolectados por una organización pueden ser útiles para mejorar 
-     las decisiones futuras de la organización. Para usar los enormes volúmenes 
+     (detección y clasificación de especies o de dígitos).
+
+     Todos los datos recolectados por una organización pueden ser útiles para mejorar
+     las decisiones futuras de la organización. Para usar los enormes volúmenes
      de datos que se recolectan, es necesario encontrar patrones en ellos. Un
      ejemplo de uso de clasificación de datos lo constituyen los anuncios
-     publicitarios de *Google Ads*: se recolecta información sobre las búsquedas 
-     en la web de un usuario y se le muestra un determinado tipo de anuncios 
+     publicitarios de *Google Ads*: se recolecta información sobre las búsquedas
+     en la web de un usuario y se le muestra un determinado tipo de anuncios
      en función de la clasificación de sus preferencias a través de la información
      recolectada. Por tanto detrás de la clasificación de datos hay un beneficio
      económico potencialmente explotable.
@@ -48,29 +50,29 @@ para tomar decisiones basadas en la información.
  * Beneficios para los usuarios:
      Aprovechan el conocimiento de las grandes bases de datos en servicios
      (recomendaciones personalizadas, inteligencia).
-     
+
      Ejemplo de recomendaciones personalizadas son por ejemplo las que efectúa *Youtube*
      cuando nos sugiere vídeos que podrían ser de nuestro agrado.
-     
-     Resulta relevante para las empresas la creación de perfiles de clientes efectuando 
+
+     Resulta relevante para las empresas la creación de perfiles de clientes efectuando
      clasificación a partir de unos datos aportados por el usuario. Por ejemplo, existen
-     empresas de préstamos rápidos vía contacto telefónico o internet que predicen si un 
+     empresas de préstamos rápidos vía contacto telefónico o internet que predicen si un
      determinado usuario devolverá el préstamo a partir de las respuestas aportadas por el mismo
-     a una serie de preguntas.     
+     a una serie de preguntas.
 
  * Mejora de la vida de las personas:
      Automatización de procesos. Detección de enfermedades. La clasificación puede
      usarse para predecir enfermedades (se estudia si una persona tiene características
      genéticas determinadas y se puede predecir si padecerá o podría padecer la enfermedad
      en función de su perfil genético).
-     
+
      Otras aplicaciones útiles: categorización de texto e imágenes (para facilitar búsquedas
      por temas), detección de anomalías (p.ej. detección de fraude), reconocimiento facial...
 
 
 ## Justificación del uso de la IA
 
-En el mundo de la minería de datos, y concretamente en el problema de 
+En el mundo de la minería de datos, y concretamente en el problema de
 clasificación, se pretende predecir nuevos datos a partir de la información
 con la que contamos. Esto requiere de técnicas que permitan extraer patrones,
 relaciones entre los datos a predecir y los conocidos, incluso aquellas que
@@ -98,7 +100,7 @@ si una persona padecerá diabetes o no en función de los valores que presente p
 dichos factores médicos.
 
 Nos encontramos ante un problema de clasificación binaria (tenemos dos valores posibles
-para el atributo Diabetes - 0,1). Uno de los clasificadores que ofrece buenos resultados 
+para el atributo Diabetes - 0,1). Uno de los clasificadores que ofrece buenos resultados
 para este problema son los árboles de decisión (ejemplos de algoritmos para generar dichos
 árboles son C4.5, ID3, CART,...).
 
@@ -124,7 +126,7 @@ y el valor 255 representa el color negro), se pretende predecir en base al
 valor de dichos píxeles, qué dígito es el que contiene la imagen.
 
 La importancia de este problema, que podría extenderse a letras también, reside en
-la detección automática de captchas, que es explotada por programas de descarga 
+la detección automática de captchas, que es explotada por programas de descarga
 automática como *JDownloader*.
 
 Se trata de un problema multiclase (tenemos 10 clases - dígitos del 0 al 9).
@@ -134,7 +136,7 @@ hallar para una instancia dada los k puntos más cercanos a la misma del conjunt
 de entrenamiento, y tomar la clase mayoritaria de entre los mismos.
 
 En el problema resuelto como ejemplo, las imágenes son de 28x28 píxeles, y los
-conjuntos de entrenamiento y de test tienen 42000 y 28000 instancias, respectivamente, lo que 
+conjuntos de entrenamiento y de test tienen 42000 y 28000 instancias, respectivamente, lo que
 ofrece una visión de que este problema no puede ser resuelto sin apoyo de técnicas computacionales.
 
 La precisión del algoritmo en la predicción dependerá del espacio métrico en el que nos
@@ -142,20 +144,20 @@ hallemos.
 
 ## Aplicación 3. Clasificación multietiqueta de música en emociones
 
-La detección de emociones en música se puede modelar como un problema de 
+La detección de emociones en música se puede modelar como un problema de
 clasificación multietiqueta. Un problema de este tipo implica que una instancia
 puede pertenecer a más de una clase, en cuyo caso las denominamos etiquetas.
-Por tanto, el problema requiere predecir, para cada nueva instancia, el conjunto de 
+Por tanto, el problema requiere predecir, para cada nueva instancia, el conjunto de
 etiquetas a las que pertenece.
 
 Observamos que esta variante del problema es mucho más difícil que las anteriores,
 puesto que el número de respuestas posibles aumenta exponencialmente con el número
 de etiquetas (2^l para l etiquetas). No sólo eso, sino que desde el punto de vista
 del aprendizaje, ya no hay que tener en cuenta únicamente las relaciones entre los
-atributos, sino que además tenemos la posibilidad de estudiar las relaciones entre 
+atributos, sino que además tenemos la posibilidad de estudiar las relaciones entre
 las etiquetas.
 
-En general, este problema se puede tratar de dos maneras: transformación de los 
+En general, este problema se puede tratar de dos maneras: transformación de los
 datos en uno o varios problemas de un tipo más simple, o adaptación de los algoritmos
 conocidos a este tipo de problemas. No se desarrollan técnicas propias en cuanto a
 algoritmos de clasificación multietiqueta porque las adaptaciones de algoritmos, o
@@ -163,11 +165,11 @@ aquellos basados en las transformaciones, suelen ser suficientemente precisos.
 
 <!-- El texto en cita es menos importante y se puede saltar si no hay tiempo -->
 > Por un lado, las transformaciones de los datos reducen el problema a tantos
-  problemas binarios como etiquetas (transformación Binary Relevance), o bien a 
-  un problema multiclase considerando el conjunto de etiquetas de cada instancia 
-  como una posible clase (transformación Label Powerset). Estas transformaciones 
-  utilizan algún algoritmo de clasificación por debajo para realizar el trabajo 
-  sobre los problemas más sencillos, y después agrupan o adaptan las soluciones 
+  problemas binarios como etiquetas (transformación Binary Relevance), o bien a
+  un problema multiclase considerando el conjunto de etiquetas de cada instancia
+  como una posible clase (transformación Label Powerset). Estas transformaciones
+  utilizan algún algoritmo de clasificación por debajo para realizar el trabajo
+  sobre los problemas más sencillos, y después agrupan o adaptan las soluciones
   obtenidas a una para el problema multietiqueta.
 
 > Por otro lado, algunos algoritmos que se utilizan se basan en mejorar la técnica
@@ -181,17 +183,17 @@ en la clasificación en sí, sino en el preprocesamiento del dataset (un tratami
 que se realiza a los datos para mejorar la solución del clasificador). Existen
 nuevas técnicas que, basándose en medidas de desequilibrio de etiquetas y otras
 relaciones entre ellas, permiten actuar sobre el dataset (por ejemplo, desactivando
-etiquetas mayoritarias de ciertas instancias) de forma que al aplicar un 
+etiquetas mayoritarias de ciertas instancias) de forma que al aplicar un
 clasificador sobre él los resultados sean mejores.
 
 Uno de los algoritmos más interesantes es *HOMER*, que agrupa las etiquetas en
-grupos atendiendo a su similitud (si suelen aparecer juntas en las mismas 
+grupos atendiendo a su similitud (si suelen aparecer juntas en las mismas
 instancias) y crea clasificadores capaces de distinguir entre ellas, para luego
 reunir la información de todos los clasificadores en uno grande que solo distinga
 entre los grupos de etiquetas.
 
 Para la aplicación de clasificación de música, se utilizaron casi 600 fragmentos
-de canciones de 30 segundos y se analizaron el ritmo y el timbre, dando lugar a 
+de canciones de 30 segundos y se analizaron el ritmo y el timbre, dando lugar a
 más de 70 atributos de entrada para cada canción. En la figura siguiente se
 muestra visualmente cómo se relacionan sus 6 etiquetas, algo que un algoritmo de
 preprocesamiento o clasificación deberá tener en cuenta y actuar en consecuencia:
@@ -199,12 +201,12 @@ preprocesamiento o clasificación deberá tener en cuenta y actuar en consecuenc
 ![emotions concurrence plot](imgs/emotions-concurrence.png)
 
 Referencias:
-  - Trohidis, K.; Tsoumakas, G.; Kalliris, G.; Vlahavas, I. - Multi-Label 
+  - Trohidis, K.; Tsoumakas, G.; Kalliris, G.; Vlahavas, I. - Multi-Label
   Classification of Music into Emotions
 
-> - Min-Ling Zhang; Zhi-Hua Zhou - ML-kNN: A Lazy Learning Approach to Multi-Label 
+> - Min-Ling Zhang; Zhi-Hua Zhou - ML-kNN: A Lazy Learning Approach to Multi-Label
   Learning
-  - Tsoumakas, G.; Katakis, I.; Vlahavas, I. - Effective and Efficient Multilabel 
+  - Tsoumakas, G.; Katakis, I.; Vlahavas, I. - Effective and Efficient Multilabel
   Classification in Domains with Large Number of Labels
-  - Tsoumakas, G.; Katakis, I.; Vlahavas, I. - Random k-Labelsets for Multi-Label 
+  - Tsoumakas, G.; Katakis, I.; Vlahavas, I. - Random k-Labelsets for Multi-Label
   Classification
