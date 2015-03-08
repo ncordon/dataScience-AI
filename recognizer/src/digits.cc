@@ -4,24 +4,25 @@ void Digits::readTrainData(ifstream& input){
     string line;
     string cell;
     int number;
-    istringstream buffer, lineStream;
-    
+    istringstream lineStream,buffer;
+
     // Dumping first line
     getline(input, line);
     
-
     while (getline(input, line)){
 	lineStream.str(line);
+	lineStream.clear();
 	getline(lineStream, cell, Digits::DELIM);
 	buffer.str(cell);
+	buffer.clear();
 	buffer >> number;
 	digits.push_back(number);
 	vector<int> current_img;
 
 	while(getline(lineStream, cell, Digits::DELIM)){
 	    buffer.str(cell);
+	    buffer.clear();
 	    buffer >> number;
-	    digits.push_back(number);
 	    current_img.push_back(number);
 	}
 	images.push_back(current_img);
@@ -29,21 +30,25 @@ void Digits::readTrainData(ifstream& input){
 }
 
 void Digits::readTestData(ifstream& input){
-    string value;
+    string line;
+    string cell;
     int number;
-    istringstream buffer;
+    istringstream buffer, lineStream;
     
-    while (input.good()){
+    // Dumping first line
+    getline(input, line);
+    
+    while (getline(input, line)){
+	lineStream.str(line);
+	lineStream.clear();
 	vector<int> current_img;
 
-	// Reading a single image
-	while(input.peek()!='\n'){
-	    getline(input, value, Digits::DELIM);
-	    buffer.str(value);
+	while(getline(lineStream, cell, Digits::DELIM)){
+	    buffer.str(cell);
+	    buffer.clear();
 	    buffer >> number;
 	    current_img.push_back(number);
 	}
-	
 	test.push_back(current_img);
     }
 }
