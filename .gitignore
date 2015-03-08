@@ -18,6 +18,8 @@
 # *.ps
 # *.eps
 presentacion.pdf
+desarrollo.pdf
+nonstop_pre.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
