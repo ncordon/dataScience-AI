@@ -6,7 +6,7 @@ int main(){
 
     Digits problem;
     problem.readTrainData(train_file);
-    problem.readTestData(test_file);
+    //problem.readTestData(test_file);
 
-    //cout << problem.getTrainImages().size();
+    cout << problem.getTrainImages().size();
 }

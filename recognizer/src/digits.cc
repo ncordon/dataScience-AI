@@ -1,29 +1,27 @@
 #include "digits.h"
 
 void Digits::readTrainData(ifstream& input){
-    string value;
+    string line;
+    string cell;
     int number;
-    istringstream buffer;
-
+    istringstream buffer, lineStream;
+    
     // Dumping first line
-    getline(input, value);
+    getline(input, line);
     
 
-    while (input.good()){
-	getline(input, value, Digits::DELIM);
-	buffer.str(value);
+    while (getline(input, line)){
+	lineStream.str(line);
+	getline(lineStream, cell, Digits::DELIM);
+	buffer.str(cell);
 	buffer >> number;
 	digits.push_back(number);
 	vector<int> current_img;
 
-	cerr << number;
-
-	// Reading a single image
-	while(input.peek()!='\n'){
-	    getline(input, value, Digits::DELIM);
-	    cerr << value;
-	    buffer.str(value);
+	while(getline(lineStream, cell, Digits::DELIM)){
+	    buffer.str(cell);
 	    buffer >> number;
+	    digits.push_back(number);
 	    current_img.push_back(number);
 	}
 	images.push_back(current_img);
