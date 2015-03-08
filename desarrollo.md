@@ -134,8 +134,8 @@ hallar para una instancia dada los k puntos más cercanos a la misma del conjunt
 de entrenamiento, y tomar la clase mayoritaria de entre los mismos.
 
 En el problema resuelto como ejemplo, las imágenes son de 28x28 píxeles, y los
-conjuntos de entrenamiento y de test tienen cada uno 42000 instancias, lo que ofrece
-una visión de que este problema no puede ser resuelto sin apoyo de técnicas computacionales.
+conjuntos de entrenamiento y de test tienen 42000 y 28000 instancias, respectivamente, lo que 
+ofrece una visión de que este problema no puede ser resuelto sin apoyo de técnicas computacionales.
 
 La precisión del algoritmo en la predicción dependerá del espacio métrico en el que nos
 hallemos.
