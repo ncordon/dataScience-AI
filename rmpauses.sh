@@ -6,6 +6,7 @@ while read -r line
 do
     line=$(echo $line | sed 's/\\pause//g')
     line=$(echo $line | sed 's/\[<+\->\]//g')
+    line=$(echo $line | sed 's/\\uncover<[^>]*>//g')
     echo $line >> nonstop_pre.tex
    
 done < ./presentacion.tex
