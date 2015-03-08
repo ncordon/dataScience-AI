@@ -14,6 +14,10 @@ instancias del conjunto de datos *test*, de las que solo se conocen los atributo
 entrada. En el ejemplo, tenemos un conjunto de flores de las que conocemos la especie,
 y aprendemos de ellas para averiguar la especie de nuevas flores.
 
+La clasificación supone uno solo de los problemas que se plantean en minería de datos,
+como son la agrupación automática de datos (clustering), la regresión, la extracción
+de reglas de asociación, etc.
+
 ## Relevancia del problema.
 
 Diariamente se recopilan enormes cantidades de datos e información útil desde
@@ -59,6 +63,9 @@ para tomar decisiones basadas en la información.
      usarse para predecir enfermedades (se estudia si una persona tiene características
      genéticas determinadas y se puede predecir si padecerá o podría padecer la enfermedad
      en función de su perfil genético).
+     
+     Otras aplicaciones útiles: categorización de texto e imágenes (para facilitar búsquedas
+     por temas), detección de anomalías (p.ej. detección de fraude), reconocimiento facial...
 
 
 ## Justificación del uso de la IA
@@ -69,6 +76,12 @@ con la que contamos. Esto requiere de técnicas que permitan extraer patrones,
 relaciones entre los datos a predecir y los conocidos, incluso aquellas que
 los humanos no sepamos apreciar, a causa de nuestra perspectiva de cada
 problema concreto.
+
+Un punto clave es que en el problema de clasificación, nunca se informa a la
+máquina de la forma de distinguir las instancias de las distintas clases, sino
+que es esta la que ha de encontrar los patrones a partir de los datos. El
+ordenador en principio no sabe diferenciar la Iris Setosa de la Versicolor,
+ni el trazo de 0 del de un 1.
 
 Además, la cantidad ingente de datos (tanto instancias
 como atributos) que se suelen analizar impiden que una persona aborde el
