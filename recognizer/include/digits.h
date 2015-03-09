@@ -12,6 +12,7 @@
 #include <iostream>
 using namespace std;
 
+typedef vector<int> Solution;
 
 /**
    @class Digits
