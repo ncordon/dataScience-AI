@@ -2,7 +2,6 @@
 #include <cmath>
 #include <list>
 #include <utility>
-#include <algorithm>
 
 /**
    @brief Implements euclidean distance
@@ -27,34 +26,38 @@ class KNN{
     vector<int> target;
     // Number of neighbors
     const int K;
+
  public:
+    /**
+       @brief Allows to introduce the train and target set of datas
+    **/
+    void fit(Digits& problem);
+
     /**
        @brief Constructor with train data provided
        @param train set of data
        @param target classification for given train data
     **/
     KNN(int neighbors, Digits& problem) 
-	:fit(problem), K(neighbors){}
+	:K(neighbors){
+	fit(problem);
+    }
     
     /**
        @brief Default constructor
     **/
-    KNN(){}
+    KNN(int neighbors)
+	:K(neighbors){}
 
     /**
        @brief Allows to add an element and its related prediction to the KNN
     **/
     void addInstance(vector<int>& image, int digit);
-
-    /**
-       @brief Allows to introduce the train and target set of datas
-    **/
-    void fit(Digits& problem);
     
     /**
        @brief Does a prediction for a given set of images
        @param test containing images to predict
        @return prediction for given test data
     **/
-    solution predict(vector<vector<int>> to_solve, double (*distance)(vector<int> x, vector<int> y));
+    Solution predict(vector<vector<int>> to_solve, double (*distance)(vector<int> x, vector<int> y));
 };

@@ -1,8 +1,8 @@
 #include "knn.h"
 
 void KNN::addInstance(vector<int>& image, int digit){
-    train.push(image);
-    target.push(digit);
+    train.push_back(image);
+    target.push_back(digit);
 }
 
 void KNN::fit(Digits& problem){
@@ -10,7 +10,7 @@ void KNN::fit(Digits& problem){
     target = problem.getTrainDigits();
 }
 
-double euclidean distance(vector<int> x, vector<int> y){
+double euclidean_distance(vector<int> x, vector<int> y){
     double suma = 0;
 	
     for (unsigned int i=0; i<x.size(); ++i){
@@ -20,25 +20,25 @@ double euclidean distance(vector<int> x, vector<int> y){
     return sqrt(suma);
 }
 
-solution predict(vector<vector<int>> to_solve , double (*distance)(vector<int> x, vector<int> y)){
-    // Vectors of pair distances and indexes in digits
+Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<int> x, vector<int> y)){
+    // Vectors of pair distances and digits
     vector<list <pair<double,int>>> k_nearest (to_solve.size());
     // Contains prediction for to_solve set
-    solution prediction(to_solve.size());
+    Solution prediction(to_solve.size());
     int max_count;
     int current_count;
     int max_digit;
 
     // For each instance to predict, compute k nearest neighbors
     for(unsigned int i=0; i<to_solve.size(); ++i){
-	k_nearest.push_back (list <pair<double,int>>);
+	k_nearest.push_back (list <pair<double,int>>());
 	
 	for (unsigned int j=0; j<train.size(); ++j){
 	    k_nearest[i].push_back (make_pair(distance(to_solve[i], train[j]), target[j]));
-	    K_nearest[i].sort();
+	    k_nearest[i].sort();
 				    
-	    if (k_nearest[i].size > K)
-		k_neartest[i].resize(K);
+	    if (k_nearest[i].size() > K)
+		k_nearest[i].resize(K);
 	}
 	max_count=0;
 	    
@@ -46,7 +46,7 @@ solution predict(vector<vector<int>> to_solve , double (*distance)(vector<int> x
 	for (unsigned int k=0; k<10; ++k){
 	    current_count = 0;
 	    
-	    for(<pair<double,int>>::iterator it=k_nearest[i].begin(); it!=k_nearest[i].end(); ++it){
+	    for(list<pair<double,int>>::iterator it=k_nearest[i].begin(); it!=k_nearest[i].end(); ++it){
 		if((*it).second == k)
 		    current_count++;
 	    }
