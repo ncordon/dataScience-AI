@@ -11,5 +11,5 @@ int main(){
     
     int k=1;
     KNN predictor(k, problem);
-    predictor.predict(problem.getTest()).submit("./data/knn_1.csv");
+    predictor.predict(problem.getTest(), displacement_d).submit("./data/knn_1.csv");
 }

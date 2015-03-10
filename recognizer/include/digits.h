@@ -12,7 +12,6 @@
 #include <iostream>
 #include <omp.h>
 using namespace std;
-
 /**
    @class Solution
    @brief Prediction about a Digits' problem

@@ -10,9 +10,9 @@
    @param y instance of image
    @pre x.size == y.size
 **/
-double euclidean_d(vector<int> x, vector<int> y);
-double pseudo_euclidean_d(vector<int> x, vector<int> y);
-
+double euclidean_d(vector<int>& x, vector<int>& y);
+double pseudo_euclidean_d(vector<int>& x, vector<int>& y);
+double displacement_d(vector<int>& x, vector<int>& y);
 
 
 /**
@@ -59,8 +59,9 @@ class KNN{
     /**
        @brief Does a prediction for a given set of images
        @param test containing images to predict
+       @param tol Tolerance in pixel amount. Only valid for displacement distance
        @return prediction for given test data
     **/
     Solution predict(vector<vector<int>> to_solve, 
-		     double (*distance)(vector<int> x, vector<int> y) = pseudo_euclidean_d);
+		     double (*distance)(vector<int>& x, vector<int>& y) = pseudo_euclidean_d, int tolerance=3);
 };

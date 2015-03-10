@@ -16,7 +16,7 @@ SOURCES= $(wildcard $(SRC)/*.cc)
 OBJECTS= $(patsubst $(SRC)/%.cc, $(OBJ)/%.o, $(SOURCES))
 
 # Flags usados al compilar y enlazar
-FLAGS= -fopenmp -Wall -Wl,--no-as-needed -std=c++11 -O2 -D _GLIBCXX_USE_NANOSLEEP -lrt
+FLAGS= -fopenmp -O2 -Wall -Wl,--no-as-needed -std=c++11 -D _GLIBCXX_USE_NANOSLEEP -lrt
 
 
 # El objetivo global es el ejecutable.

@@ -10,7 +10,7 @@ void KNN::fit(Digits& problem){
     target = problem.getTrainDigits();
 }
 
-double euclidean_d(vector<int> x, vector<int> y){
+double euclidean_d(vector<int>& x, vector<int>& y){
     double suma = 0;
 	
     for (unsigned int i=0; i<x.size(); ++i){
@@ -20,7 +20,7 @@ double euclidean_d(vector<int> x, vector<int> y){
     return sqrt(suma);
 }
 
-double pseudo_euclidean_d(vector<int> x, vector<int> y){
+double pseudo_euclidean_d(vector<int>& x, vector<int>& y){
     double suma = 0;
 
     for (unsigned int i=0; i<x.size(); ++i){
@@ -30,7 +30,60 @@ double pseudo_euclidean_d(vector<int> x, vector<int> y){
     return suma;
 }
 
-Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<int> x, vector<int> y)){
+double displacement_d(vector<int>& x, vector<int>& y){
+    const int tolerance = 5;
+    double left(0), right(0), top(0), bottom(0);
+    double value;
+    int n = x.size();
+    int dim = 28;
+    double distance;
+    
+    for (unsigned int tol = 0; tol < tolerance; ++tol){
+	// Row
+	for (unsigned int i = 0; i < n/dim; ++i){
+	    for (unsigned int j = 0; j < dim; ++j){
+		// Displacement to the right
+		if (j < (tol+1))
+		    right += x[i*dim + j] * x[i*dim +j];
+		else{
+		    value = (x[i*dim + j - tol - 1] - y[i*dim + j - tol - 1]);
+		    value *= value;
+		    right += value;
+		}
+		// Displacement to the left
+		if (j > (dim-tol-2))
+		    left += x[i*dim + j] * x[i*dim + j];
+		else{
+		    value = (x[i*dim + j + tol + 1] - y[i*dim + j + tol + 1]);
+		    value *= value;
+		    left += value;
+		}
+		
+		// Displacement
+		if (i < (tol+1))
+		    bottom += x[i*dim + j] * x[i*dim +j];
+		else{
+		    value = (x[(i-tol-1)*dim + j] - y[(i-tol-1)*dim + j]);
+		    value *= value;
+		    bottom += value;
+		}
+		// Displacement to the left
+		if (i > (n/dim-tol-2))
+		    top += x[i*dim + j] * x[i*dim + j];
+		else{
+		    value = (x[(i+tol+1)*dim + j] - y[(i+tol+1)*dim + j]);
+		    value *= value;
+		    top += value;
+		}
+	    }
+	}
+	distance = min(min(left,right), min(bottom,top));
+    }
+    return min(distance, pseudo_euclidean_d(x, y));
+}
+
+Solution KNN::predict(vector<vector<int>> to_solve, 
+		 double (*distance)(vector<int>& x, vector<int>& y), int tolerance3){
     // Vectors of pair distances and digits
     vector<list <pair<double,int>>> k_nearest (to_solve.size());
     // Contains prediction for to_solve set
