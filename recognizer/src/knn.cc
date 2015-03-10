@@ -22,9 +22,14 @@ double euclidean_d(vector<int> x, vector<int> y){
 
 double pseudo_euclidean_d(vector<int> x, vector<int> y){
     double suma = 0;
-	
+
+    #pragma omp parallel for
     for (unsigned int i=0; i<x.size(); ++i){
-	suma += (x[i]-y[i])*(x[i]-y[i]);
+	double value = (x[i]-y[i]);
+	value *= value;
+
+	#pragma omp atomic
+	suma += value;
     }
 	
     return suma;
@@ -32,30 +37,32 @@ double pseudo_euclidean_d(vector<int> x, vector<int> y){
 
 Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<int> x, vector<int> y)){
     // Vectors of pair distances and digits
-    vector<list <pair<double,int>>> k_nearest (to_solve.size());
+    vector<vector <pair<double,int>>> k_nearest (to_solve.size());
     // Contains prediction for to_solve set
     Solution prediction(to_solve.size());
-    int max_digit;
-    int max_count;
-    int current_count;
 
-    // For each instance to predict, compute k nearest neighbors
+    // For each instance to predict, compute k nearest neighbors    
+    #pragma omp parallel for
     for(unsigned int i=0; i<to_solve.size(); ++i){
-	k_nearest[i] = list <pair<double,int>>();
+	k_nearest[i] = vector <pair<double,int>>();
+
 	for (unsigned int j=0; j<train.size(); ++j){
 	    k_nearest[i].push_back (make_pair(distance(to_solve[i], train[j]), target[j]));
-	    k_nearest[i].sort();
+	    sort(k_nearest[i].begin(), k_nearest[i].end());
 				    
 	    if (k_nearest[i].size() > K)
 		k_nearest[i].resize(K);
 	}
-	max_count=0;
+	int max_digit;
+	int max_count = 0;
+	int current_count = 0;
 
 	// Calculates the predominant digit for current instance of test
+	#pragma omp parallel for
 	for (unsigned int k=0; k<10; ++k){
 	    current_count = 0;
 	    
-	    for(list<pair<double,int>>::iterator it=k_nearest[i].begin(); it!=k_nearest[i].end(); ++it){
+	    for(vector<pair<double,int>>::iterator it=k_nearest[i].begin(); it!=k_nearest[i].end(); ++it){
 		if((*it).second == k)
 		    current_count++;
 	    }
@@ -67,7 +74,6 @@ Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<i
 	}
 	prediction[i] = max_digit;
     }
-    
     return prediction;
 }
 

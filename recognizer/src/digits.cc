@@ -59,7 +59,7 @@ void Solution::submit(string file){
     output.open(file);
 
     output << "ImageId,Label" << endl;
-    
+
     for (int i=0; i<size(); ++i)
 	output << (i+1) << ',' << at(i) << endl;
 }

@@ -2,6 +2,7 @@
 #include <cmath>
 #include <list>
 #include <utility>
+#include <algorithm>
 
 /**
    @brief Implements euclidean distance
