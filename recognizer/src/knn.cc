@@ -10,7 +10,7 @@ void KNN::fit(Digits& problem){
     target = problem.getTrainDigits();
 }
 
-double euclidean_distance(vector<int> x, vector<int> y){
+double euclidean_d(vector<int> x, vector<int> y){
     double suma = 0;
 	
     for (unsigned int i=0; i<x.size(); ++i){
@@ -18,6 +18,16 @@ double euclidean_distance(vector<int> x, vector<int> y){
     }
 	
     return sqrt(suma);
+}
+
+double pseudo_euclidean_d(vector<int> x, vector<int> y){
+    double suma = 0;
+	
+    for (unsigned int i=0; i<x.size(); ++i){
+	suma += (x[i]-y[i])*(x[i]-y[i]);
+    }
+	
+    return suma;
 }
 
 Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<int> x, vector<int> y)){
@@ -32,8 +42,6 @@ Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<i
     // For each instance to predict, compute k nearest neighbors
     for(unsigned int i=0; i<to_solve.size(); ++i){
 	k_nearest[i] = list <pair<double,int>>();
-	if (i%1000 == 0)
-	    cerr << i << endl;
 	for (unsigned int j=0; j<train.size(); ++j){
 	    k_nearest[i].push_back (make_pair(distance(to_solve[i], train[j]), target[j]));
 	    k_nearest[i].sort();
@@ -57,7 +65,7 @@ Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<i
 		max_digit = k;
 	    }
 	}
-	prediction[i] = (max_digit);
+	prediction[i] = max_digit;
     }
     
     return prediction;

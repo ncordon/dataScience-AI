@@ -9,7 +9,8 @@
    @param y instance of image
    @pre x.size == y.size
 **/
-double euclidean_distance(vector<int> x, vector<int> y);
+double euclidean_d(vector<int> x, vector<int> y);
+double pseudo_euclidean_d(vector<int> x, vector<int> y);
 
 
 
@@ -60,5 +61,5 @@ class KNN{
        @return prediction for given test data
     **/
     Solution predict(vector<vector<int>> to_solve, 
-		     double (*distance)(vector<int> x, vector<int> y) = euclidean_distance);
+		     double (*distance)(vector<int> x, vector<int> y) = pseudo_euclidean_d);
 };
