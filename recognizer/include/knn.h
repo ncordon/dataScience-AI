@@ -59,5 +59,6 @@ class KNN{
        @param test containing images to predict
        @return prediction for given test data
     **/
-    Solution predict(vector<vector<int>> to_solve, double (*distance)(vector<int> x, vector<int> y));
+    Solution predict(vector<vector<int>> to_solve, 
+		     double (*distance)(vector<int> x, vector<int> y) = euclidean_distance);
 };

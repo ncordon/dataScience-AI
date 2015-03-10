@@ -12,7 +12,27 @@
 #include <iostream>
 using namespace std;
 
-typedef vector<int> Solution;
+
+class Solution:public vector<int>{
+ public:
+    /**
+       @brief Default constructor
+    **/
+    Solution(){}
+
+    /**
+       @brief Constructor with parameters
+       @param size of vector
+    **/
+    
+    Solution(int size)
+	:vector<int>(size){};
+    /**
+       @brief Prints solution to file
+       @param file which solution will printed to
+    **/
+    void submit(string file);
+};
 
 /**
    @class Digits

@@ -16,7 +16,7 @@ SOURCES= $(wildcard $(SRC)/*.cc)
 OBJECTS= $(patsubst $(SRC)/%.cc, $(OBJ)/%.o, $(SOURCES))
 
 # Flags usados al compilar y enlazar
-FLAGS= -Wall -std=c++11
+FLAGS= -Wall -std=c++11 -O2
 
 
 # El objetivo global es el ejecutable.

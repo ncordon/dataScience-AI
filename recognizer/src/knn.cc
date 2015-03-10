@@ -25,14 +25,15 @@ Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<i
     vector<list <pair<double,int>>> k_nearest (to_solve.size());
     // Contains prediction for to_solve set
     Solution prediction(to_solve.size());
+    int max_digit;
     int max_count;
     int current_count;
-    int max_digit;
 
     // For each instance to predict, compute k nearest neighbors
     for(unsigned int i=0; i<to_solve.size(); ++i){
-	k_nearest.push_back (list <pair<double,int>>());
-	
+	k_nearest[i] = list <pair<double,int>>();
+	if (i%1000 == 0)
+	    cerr << i << endl;
 	for (unsigned int j=0; j<train.size(); ++j){
 	    k_nearest[i].push_back (make_pair(distance(to_solve[i], train[j]), target[j]));
 	    k_nearest[i].sort();
@@ -41,7 +42,7 @@ Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<i
 		k_nearest[i].resize(K);
 	}
 	max_count=0;
-	    
+
 	// Calculates the predominant digit for current instance of test
 	for (unsigned int k=0; k<10; ++k){
 	    current_count = 0;
@@ -56,7 +57,7 @@ Solution KNN::predict(vector<vector<int>> to_solve , double (*distance)(vector<i
 		max_digit = k;
 	    }
 	}
-	prediction.push_back(max_digit);
+	prediction[i] = (max_digit);
     }
     
     return prediction;
