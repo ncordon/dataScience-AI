@@ -2,8 +2,8 @@
 #include "knn.h"
 
 int main(){
-    ifstream train_file("./data/train.csv");
-    ifstream test_file("./data/test.csv");
+    ifstream train_file("../data/train.csv");
+    ifstream test_file("../data/test.csv");
 
     Digits problem;
     problem.readTrainData(train_file);

@@ -116,3 +116,7 @@ sympy-plots-for-*.tex/
 
 # csv files
 *.csv
+
+digits
+*.o
+*.Rhistory
